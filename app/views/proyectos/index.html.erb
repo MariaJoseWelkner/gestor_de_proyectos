@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Proyectos</h1>
+
+<div class='container-fluid'>
+    <table class="table table-striped">
+    <tr>
+      <th>Nombre del Proyecto</th>
+      <th>Descripción del Proyecto</th>
+      <th>Fecha de Comienzo</th>
+      <th>Fecha de termino</th>
+      <th>Estado del Proyecto</th>
+    </tr>
+    <% @proyectos.each do |proyecto| %>
+      <tr>
+        <td><%= proyecto.nombre%></td>
+        <td><%= proyecto.descripcion%></td>
+        <td><%= proyecto.fecha_comienzo%></td>
+        <td><%= proyecto.fecha_termino%></td>
+        <td><%= proyecto.estado%></td>
+      </tr>
+      <% end %> 
+    </table>
+</div>
+
+
+
+<%= link_to "New proyecto", new_proyecto_path %>
+
+
+
