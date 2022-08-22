@@ -3,6 +3,11 @@
 <h1>Proyectos</h1>
 
 <div class='container-fluid'>
+  <%= form_with url: "/proyectos", method: :get do |form| %>
+  <%= form.label :estado_filter, "Filter by:" %>
+  <%= form.text_field :estado_filter %>
+  <%= form.submit "Filter" %>
+
     <table class="table table-striped">
     <tr>
       <th>Nombre del Proyecto</th>
@@ -21,6 +26,7 @@
       </tr>
       <% end %> 
     </table>
+  <% end %>   
 </div>
 
 

@@ -3,7 +3,11 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos or /proyectos.json
   def index
-    @proyectos = Proyecto.all
+    if params[:estado_filter] && !(params[:estado_filter] == "")
+      @proyectos = Proyecto.where('UPPER(estado) LIKE ?', "%#{params[:estado_filter].upcase}%")
+    else
+      @proyectos = Proyecto.all
+    end
   end
 
   # GET /proyectos/1 or /proyectos/1.json
